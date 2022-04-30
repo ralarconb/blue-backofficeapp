@@ -1,1 +1,25 @@
-<p>registration works!</p>
+<h5>Registration</h5>
+<div [hidden]="submitted">
+    <form #registrationForm="ngForm" (ngSubmit)="onSubmit()">
+        <div>
+            <label for="firstName">First name:</label>
+            <input type="text" id="firstName" required [(ngModel)]="model.firstName" name="firstName" />
+        </div>
+        <div>
+            <label for="lastName">Last name:</label>
+            <input type="text" id="lastName" required [(ngModel)]="model.lastName" name="lastName" />
+        </div>
+        <div>
+            <label for="email">Email:</label>
+            <input type="email" id="email" required [(ngModel)]="model.email" name="email" />
+        </div>
+        <div>
+            <label for="password">Password:</label>
+            <input type="text" id="password" required [(ngModel)]="model.password" name="password" />
+        </div>
+        <button [disabled]="!registrationForm.form.valid" type="submit">Submit</button>
+    </form>
+</div>
+<div [hidden]="!submitted">
+    <p>Your email {{model.email}} had been registered successfully</p>
+</div>
