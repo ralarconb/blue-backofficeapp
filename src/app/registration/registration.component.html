@@ -15,7 +15,7 @@
         </div>
         <div>
             <label for="password">Password:</label>
-            <input type="text" id="password" required [(ngModel)]="model.password" name="password" />
+            <input type="password" id="password" required [(ngModel)]="model.password" name="password" />
         </div>
         <button [disabled]="!registrationForm.form.valid" type="submit">Submit</button>
     </form>
